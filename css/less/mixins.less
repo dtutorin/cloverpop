@@ -1,0 +1,54 @@
+.opacity(@alfa: 100) {
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{alfa})";
+  filter: alpha(opacity=@alfa);
+  -moz-opacity: @alfa/100;
+  -khtml-opacity: @alfa/100;
+  opacity: @alfa/100;
+}
+
+.round(@cornerRound: 4px) {
+  -webkit-border-radius: @cornerRound;
+  -moz-border-radius: @cornerRound;
+  border-radius: @cornerRound;
+}
+
+.ffont(@family: @omnes) {
+  font-family: @family;
+  //font-weight: 300;
+}
+
+.btn-bg(@btn-bg-color){
+  background: @btn-bg-color;
+
+  &:hover {
+    background: darken(@btn-bg-color, 7%);
+
+  }
+}
+.tiles-bg(@tile-bg-color){
+  .tile {
+    .panel-body {
+      background: (@tile-bg-color);
+    }
+  }
+}
+
+.shadow(@color, @alpha, @ox: 0, @oy: 1rem, @blur: 3.25rem) {
+  -webkit-box-shadow: @ox @oy @blur rgba(red(@color), green(@color), blue(@color), @alpha);
+  -moz-box-shadow: @ox @oy @blur rgba(red(@color), green(@color), blue(@color), @alpha);
+  box-shadow: @ox @oy @blur rgba(red(@color), green(@color), blue(@color), @alpha);
+}
+
+.gradient(@scolor, @fcolor) {
+  background: @scolor;
+  background: -moz-linear-gradient(top, @scolor 0%, @fcolor 100%);
+  background: -webkit-linear-gradient(top, @scolor 0%,@fcolor 100%);
+  background: linear-gradient(to bottom, @scolor 0%,@fcolor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@scolor', endColorstr='@fcolor',GradientType=0 );
+}
+
+.stitches-tile-icns(@x: 0, @y: 0, @width: 0, @height: 0) {
+  background-position: @x @y;
+  width: @width;
+  height: @height;
+}

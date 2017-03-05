@@ -1,0 +1,455 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color, color, 600ms, ease-out;
+  .ffont();
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-size: @font-size;
+}
+
+body {
+  color: @dark-gray;
+}
+.container {
+  max-width: @wmain;
+}
+// Fonts
+
+h1, .h1 {
+  font-size: @font-size-xl;
+}
+
+h2, .h2 {
+  font-size: @font-size-xl;
+  font-weight: 400;
+}
+
+h3, .h3 {
+
+}
+
+h4, .h4, {
+
+}
+
+p {
+  font-size: @font-size-base;
+  font-weight: 300;
+}
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}
+// Buttons
+
+.btn {
+  font-size: @font-size-base;
+  font-weight: 600;
+  color: @white;
+  &:hover,
+  &:active,
+  &:focus {
+    color: @white;
+  }
+  &.btn-lg {
+    font-size: @font-size-lg;
+  }
+}
+
+.btn-invite {
+  .btn-bg(@green);
+}
+.btn-record {
+  .btn-bg(@tomato);
+}
+.btn-follow {
+  .btn-bg(@violet);
+}
+.btn-rate {
+  .btn-bg(@blue);
+}
+.btn-send {
+  .btn-bg(@rose);
+}
+.btn-cont {
+  .btn-bg(@carot);
+}
+//Header
+.header-menu {
+  background: @gray;
+  border: none;
+  color: @white;
+  margin-bottom: 10px;
+  min-height: 43px;
+  &.navbar-default {
+    .nav {
+      li{
+        a{
+          color: @white;
+          font-size: @font-size-lg;
+          font-weight: 500;
+          &:hover,
+          &:active,
+          &:focus {
+            background: darken(@gray, 7%);
+          }
+        }
+      }
+      .open {
+        a:focus, a:hover {
+          background: darken(@gray, 10%);
+          border: none;
+        }
+      }
+    }
+  }
+  .glyphicon {
+    font-size: @font-size-sm;
+    margin-right: 10px;
+  }
+  .dropdown-menu {
+    margin: 0;
+    .round(0);
+    background: darken(@gray, 7%);
+    border: none;
+  }
+}
+.navbar-brand {
+  float: left;
+  height: auto;
+  padding: 10px 15px 10px 0;
+  img{
+    max-width: 1.562rem;
+  }
+}
+
+// Dashboard and tabs
+.main-dashboard {
+  .tab-content{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+  .nav-tabs {
+
+    li{
+
+      a{
+        font-size: @font-size-lg;
+        font-weight: 600;
+        color: @dark-gray;
+        padding: 5px 20px;
+        .round(0);
+        .opacity(@alfa: 30);
+
+        &:hover,
+        &:active,
+        &:focus {
+          .opacity(@alfa: 100);
+          background: @white;
+          border: 1px solid @white;
+          border-bottom: 1px solid #ddd;
+        }
+      }
+      &.active {
+        a {
+          border-top: 1px solid @lazure;
+          -webkit-box-shadow: inset 0px 1px 0px 0px @lazure;
+          -moz-box-shadow: inset 0px 1px 0px 0px @lazure;
+          box-shadow: inset 0px 1px 0px 0px @lazure;
+          .opacity(@alfa: 100);
+          border-bottom: 1px solid @white;
+          &:hover,
+          &:active,
+          &:focus {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+          }
+        }
+      }
+    }
+  }
+  a{
+    &.show-more {
+      font-size: @font-size-base;
+    }
+  }
+}
+// Tiles
+.tile {
+   border: none;
+   margin-bottom: 1rem;
+   position: relative;
+
+  .panel-body {
+    padding-left: 0;
+    border: none;
+    .round();
+    font-weight: 300;
+    line-height: 1;
+    a {
+      &.btn {
+        padding: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: pre-line;
+        line-height: 1;
+        min-height: 2.25rem;
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateY(-50%)  translateX(-50%);
+          font-size: @font-size-base;
+          font-weight: 600;
+          color: @white;
+        }
+      }
+    }
+
+  }
+  .remove-tile {
+    position: absolute;
+    top: -8px;
+    right: 3px;
+    display: block;
+    font-size: @font-size-xl;
+    font-weight: 500;
+    color: @dark-gray;
+    text-shadow: 0 1px 0 @white;
+    .opacity(40);
+    cursor: pointer;
+    &:hover {
+      .opacity(100);
+    }
+  }
+  .media {
+    a {
+      font-size: @font-size-base;
+      color: @black;
+      &:hover {
+        color: @blue;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    img {
+
+    }
+    .tile-users {
+      clear: both;
+      font-style: italic;
+    }
+
+  }
+}
+//Dashboard icons
+
+.stitches-dsh-icn(@x: 0, @y: 0, @width: 0, @height: 0) {
+  background-position: @x @y;
+  width: @width;
+  height: @height;
+}
+
+.dsh-icn {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAACLCAYAAACdrJJRAAAMv0lEQVR4Xu2bC3BVxRnHDQkQEkAIoJCAFWt5FKuDtLzbglWUKRSpUCmSMbxDaHgUoYBC0QqIFBikhPdLVKRAAa20FZBRGUBrh1dTRUZeQkJASCEJgTxIf/87e5gDOefec26gtDN3Z77ZPXt3v/9+376+b3dv1B23IUTdBsw7IqC3VOthq7d3797R69atKw2ndWGBDhky5B7A9peVlbVZsmTJl36BwwV9G6CnoXcWL17c45aDpqamtr569epHAFWFipC2C9J+6AfYt6RDhw59F6AnAImBSkl/AGiXCoOmp6fXLCkpaQCViRmMo0lnK12lSpXJRD2he6EsaE1xcfGM6tWrXyksLEyKjo4uUblKhNLS0tOo/8KNDXKUdPDgwY9HRUXNgS4BWIlKBaRfWrRo0VYxYCApfhTaDdP2ykPtnVD7FJI1pQEonjoTqLPZEyhMH6bgHqiyqXAKBkNgsMWAfkDcmQZ9imrbKI+GPkqZpSS/ZeqU0Yj2S5cuFZ/rgmufAjyJki9BUrFIlach2Xv063YAH+H7E77bGs1M5LsjJJ7gR02nkcorF1xBUdddtPRv1LgKwFaY/IZ0NnEy+S8Qd+L779CvoTVQQ2gOJHVXZwx0Wb58ufrcO+iUKVMqnTp16oeMh0RavAbJR1F7BnQE0nRpDJ2EcqHm0PO5ubmzEhISNMhyGzRosAMeV32BWoVHjx5dbc6cOYX6Rq0zkVqSSd3R0oLyyZuflJQ0SiD28k6AyvM1T4cPH16H6fEJ9b5tY3gcVbZ3U2VYkt5YCWlXIFmyTdJ1DKY+blLdLNB0QGeafi1iQE2mz9XXnoMv9Yor0yMZoMUkY6HL0CgkXeQZ0W+fmsHUD0kFWk2gNGAkkurbcwhH0hSAVlgINGA4q1KGZ8RwJFUdrIZKLVq0CDSYaaJ1NrAxeA2+JfXKOFi5COjN0KIrj4h6I+q9KRr4vxhIgSWwdu3alTBNoojLiK/iSMmC8LwUepZUZkh+fv4DMO/Kgt+B+F7oBAv+HuyoLcT72eIuedG/F9CoQYMGNYOxDLMhQZiu5reZiYmJmW4GmVU3JCjmyY+QYgEVvgtdgWT/noAukl8DqRuR/j5UA/oKSkNieQCu6g4KmpaW1gijax0MZMUfAWC+rHqY7rRaTaMekufG90CoKbQPf+apBQsWyFR1DK6gKSkpsThL46n1WygHxiNiYmK2YmivJ90f4BOoMSY7O3sJv2+SFoxF0Yh4Ng7VC5bpeiOyK2j//v3rVa5cOZMK9dRXgIxTZYzuzkRyJy7JfyHdmIZsWLZs2Xl+UwOnQAVoqIlfCz8KtT1Ci7fB4BhxCpSL2qKw3A9qoPB7P8BSMVU6kv4O5epCxZR7Q2qmK/pSdq3ToHKUVIcYzEFZ8q+qD2l1N6Qeznc15uWkWrVq9YXpEuivGGXdjcvRDPU/R1mp+ieqS9mJTochwUDlME2FdiHR07h88lsCAcl60ZjXNaqRdIyVD3gceZtozGPkvcb0GYOkASfZHhxBjfPUi8prKfwFlEIfyp24FgCoS9439jzmc3Pm85vktYTSAc3wrF4xMtPlGMkS41HPvrHFN34zsNIoK+s/jrgJqj/sVMd19AIqH/MPVHoW2oeKB6Hif7gBo3ItHstQb1viDdTtz+jN8wWqwjjGLQH7M8lESMc2L6LSHQ4StkeyF8nXFPoG4B709S63BgZdkczkHwCT12AgR1irzId876TvzpKuayTrRLqJARlNPJ/GFYcFqkoc71S9cuVKV5LTIHncCv+G5DypIbVN3lH1fVxc3DtuK5HViJALvikYRR83pJ+e4ltrrLY4K+hscAXdsJY+P0Y65L7qFTQAoEWDKDo+Pl5nS4FQUFCgDbzUz4moL1CbdBVKRkArpL5QlSPqDaWhCv0eUW+F1BeqcrjqVb1ya6yxOFJjY2PfmDdv3kU3cM+gycnJ8TUInILWYTtLwDKUhX+GTSDf2qwxYXTI3JXFvydbX5bTpYEaEhIURpVh0BKAZ6FfUEemphV0DrwZkLkCIS1LUPbRQcrOYyOXIV4uBAWVlY/pOcBYBXYw7SzXdhqd1wP8OXlDSeu2Yhvm51i3nccV1GY1zIWJTjwFtA2me5DirHGemhMfJ/9L8nsRb9HtFPuqGuAaXEExJx9EZe9T825IFzpTYbjGbv8aO7cngP2gjfzemnil3cHyrF7jPOmKxLri0KXADEtdGGwPAHAEKXUzMZXGyZuTFTgM+lPVqlX7+x69MqSpLOtPZuVOWj9ANqyxDl830stXPQ2Nw6j+WN6bfB6+SxnR9wQ703dU74ABAxLxS05JNTBayCCUBHIndhuJLK0dQgMPooEiGiqv7hVIPNui4k9V3bN66c+GqOxrVUDK3yPlWJ05YA8dJMt+U6EynQH4CtChpOUFyJ95jIZu9wUKgwZU0KjUXdtSpElVfyLpWhj+nDxdY5bRoB00SB6a/Fb1vxwu3Sg+vHDhwr1OUgYEcfph4MCBCaj3PaPKvQyaFEbtgWHDhtUmPZt8maBHYT4O5sdUnvRyGqFb4wuUaUr5HF+gmJpV8E/ljwacJpjNBWii7cjmurUXx2kkZWSMy3HKoOzYYMc7weZpY1q/EUYPQVdgtgwJtLLtsyRA8vvI6wvIr8jTfM6hXDdU/pmblK7qNRV0BPA4DHUnmmTytKYegvE5vnWEo0GltbYKpIOrkUyflU6OsL0RoRyoSsw/Xc7OMhK7CXCShoyj3PpgjpNVOeQuoy5lZNaBqUatLoJ0piTJNAc1QuWtv42EJ0OdlPkBDZTVBp2ZmRlTv379qLy8vEBjw/FjQvVpsLFQod+8qLdCAE6VI6A3XaWe5+mtQo706a3SbIDv/6Z6zd5ah009BlfigpOVh01VA/+lFgZZCVbGOdlMwVQVVFKdll2+fPkZFvtXYaJF/488bBpzg+0r00a/94N0kja+qKho1cqVK3Wi5hiCgmIRtABINxO1bLUnsH3J6gsEc9w63/Z7IXXasZHvDwvUPGK77nAZhuOxFs4SN5V7QayGyyi71jDyO4R9CmreB66H4Q9Mq3WRcMio8k6TtwkQ3dnozF/hAI16ki44GpakqoTJ0g6mz5NMhPHLpKeTto5ZVeQ0eb/jt2dIXwRwGoAfuwEq37VP5ZcaZimUi4eqQzrLHQE1tjHNAnAWZTWYNHgKoLfwZ8Yz0uV6lAuOoOaKRP2kN2b28E8AVgDwMpl6uyL3cR3fZ8hPtxfke/r58+cneb4iMQfLZ2AiB/dagPkamMm7bgd14/tffOt24sdGC/by+Uhb10laR0mNqxh44mULrwBQE6A0B429T74ev0k71kn3HczXak7z1SvoLhhmwliPTq+T3mqAFg5+10qkRSIQfIGapU+XQHUMyAZimZ3dHaS0sv4CcB7AOgzRrVM2S+L9Tkui2+iVdd9KjhCuhW4NdaYgZjrDdwtyotdTrh7Amkb7WSB2k1fOR/W8yzCFtEgEA9VlbR8ua7V4BA2eQZG8O63XK7pW0H02rsVId4DvVYCuyMjIyL9poDriOXfuXBwnZrHsYFVoABjRZXpRS3wZa78g2M5ib4hnSUO13s/vEVA/2vJdNqJe3yrzUyGiXj/a8l02LPXKfmKvjNZBRyhr3qlFYYFiYL/FIv9LGH6G4W2Zp54lDglqzvKb4E4UypY1RpseQekZQgEuTnN2lq91ckpD7mIjOBzq2VdQUAOgf4zMh6GAFsC0NbHOAnX8KgtB75M2mk2+M98TMchWupmfUkdIB4rnBhMop3dGCrICQmlnFf09im1OzpRjCMVAh8ffQ4rFSKOLAXuQtSjb1x7kXuiPHzrVdg0hQTlavxtGqyE991E4TAMmq+/IUz/qCZH+yKFw1PgxsiT8g+rM/tKlSx1hrlHaF9LrjTyYdmFAyZMLGFzGnZT91Myg6D3Saupt93XXpsPHrKyswTBZCF274pI1j3mSjvGlP3EEgsxVXmKN4Dc9CVKwyk/ABJ3p2a0woLLk5xmJrG7QU/jRdgnMlBqGZHpUo2ANNn+gqmluLGRy6jKgE6Qpko16n9AlgiWpOVJ/0zbQdHfzLsbaGi4VjptGWMUDcciBhDeeBJD+x2YNlo80kMg7xY1jArGcYbkbCidQ88+Cuf6eQLn+uJ9W628MmvhWkB+qp1w620+w5X8BqK7IZNm7Bi+Lw3PUlj/qKciVRBO6Iin31zKLQchlkJHZB0a6sThmGMoX/SkU+GcQALvJ30zcg7gDNJ5VbG7YRzpqmbljawXTfP5ydCAnJ+dOFn89fNLNo1alNkh1kPnaBMAklsC9wZZAT33qpFNGti6JnoQ+B1DXnb5CyNHrAvrf38R9ieVQOCxJI6BeNXBb1PsfIb875iGnL9wAAAAASUVORK5CYII=);    background-repeat: no-repeat;
+  display: inline-block;
+  line-height: 1;
+
+  &.dsh-icon_decisions {
+    .stitches-dsh-icn(-5px, -5px, 19px, 19px);
+  }
+
+  &.dsh-icon_gauges {
+    .stitches-dsh-icn(-5px, -34px, 19px, 18px);
+  }
+
+  &.dsh-icon_goals {
+    .stitches-dsh-icn(-5px, -62px, 18px, 18px);
+  }
+
+  &.dsh-icon_members {
+    .stitches-dsh-icn(-5px, -90px, 19px, 16px);
+  }
+
+  &.dsh-icon_settings {
+    .stitches-dsh-icn(-5px, -116px, 19px, 18px);
+  }
+}
+
+
+
+// Icons of tiles
+
+.tile-icns {
+  background-image: url(data:image/png;base64,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);    background-repeat: no-repeat;
+  display: block;
+  .opacity(@alfa: 30);
+  &:hover, active, focus {
+    .opacity(@alfa: 100);
+  }
+
+  &.tile-icon-org {
+    .stitches-tile-icns(-5px, -5px, 15px, 14px);
+  }
+
+  &.tile-icon-participant {
+    .stitches-tile-icns(-5px, -29px, 13px, 16px);
+  }
+
+  &.tile-icon-team {
+    .stitches-tile-icns(-5px, -55px, 15px, 14px);
+  }
+}
+
+// Colors of tiles
+
+.mod-active{
+  .tiles-bg(@light-carot);
+}
+.mod-decision-backlog {
+  .tiles-bg(@smoke);
+}
+.mod-decided {
+  .tiles-bg(@light-green);
+}
+.mod-done {
+  .tiles-bg(@light-blue);
+}
+///
+#main {
+  padding-bottom: 3.125rem;
+}
+// Footer
+
+.footer {
+  position: absolute;
+  left:  0;
+  bottom: 0;
+  width: 100%;
+  height: 3.125rem;
+  background: @white;
+  font-size: @font-size-sm;
+  color: @gray;
+  border-top: 1px solid @smoke;
+  border-bottom: 2px solid @light-gray;
+  line-height: 3.125rem;
+  p {
+    font-size: @font-size-sm;
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+  max-width: auto;
+}
+
+@media screen and (max-width: 960px) {
+
+}
+
+@media screen and (max-width: 800px) {
+
+}
+
+@media screen and (max-width: 768px) {
+  // Dashboard and tabs
+  .main-dashboard {
+    .tab-content{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    .nav-tabs {
+      padding-bottom: 1rem;
+      li{
+        display: block;
+        width: 100%;
+        a{
+          color: @dark-gray;
+          padding: 5px 20px;
+          margin: 0 0.8rem;
+          .round(6px);
+
+          &:hover,
+          &:active,
+          &:focus {
+            .opacity(@alfa: 100);
+            background: @white;
+            border: 1px solid @white;
+            border-bottom: 1px solid #ddd;
+          }
+        }
+        &.active {
+          a {
+            background: @smoke;
+            border: 1px solid @white;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            &:hover,
+            &:active,
+            &:focus {
+              border: 1px solid @white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  // Logo
+
+  .navbar-brand {
+    float: left;
+    height: auto;
+    padding: 10px 15px;
+    img{
+      max-width: 1.562rem;
+    }
+  }
+  .navbar-header{
+    &:after {
+      clear: none;
+    }
+  }
+
+  // dropdown menu
+  .header-menu{
+    .dropdown {
+      position: static;
+    }
+    .dropdown-menu {
+      right: 0;
+      margin: 0;
+      min-width: 100vw;
+    }
+  }
+}
+@media screen and (max-width: 720px) {
+
+}
+
+@media screen and (max-width: 560px) {
+
+}
+
+@media screen and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 360px) {
+
+}
+
+@media screen and (max-width: 320px) {
+
+}
